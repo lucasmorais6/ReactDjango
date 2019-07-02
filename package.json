@@ -15,5 +15,13 @@
     "url": "https://github.com/lucasmorais6/reactDjango/issues"
   },
   "homepage": "https://github.com/lucasmorais6/reactDjango#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "webpack": "^4.35.2",
+    "webpack-bundle-tracker": "^0.4.2-beta"
+  },
+  "devDependencies": {
+    "webpack": "^3.10.0",
+    "webpack-bundle-tracker": "^0.2.1"
+  }
 }

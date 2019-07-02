@@ -69,7 +69,7 @@ TEMPLATES = [
         },
     },
     STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+        os.path.join(BASE_DIR, 'static'),
 ]
 
 WSGI_APPLICATION = 'reactDjango.wsgi.application'
@@ -126,3 +126,12 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+# Configuração do webpack pegando o diretorio dos arquivos estáticos e
+# em qual arquivo ele deve buscar o status do que está sendo processado pelo Webpack
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'dist/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
+    }
+}

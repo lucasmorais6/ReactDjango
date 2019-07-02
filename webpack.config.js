@@ -2,6 +2,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var BundleTracker = require('webpack-bundle-tracker'); 
+var ExtractText = require('extract-text-webpack-plugin');
 module.exports = {
   entry:  path.join(__dirname, 'static/src/js/index'), //ponto de entrada da applicação o arquivo 
   output: {
@@ -13,15 +14,28 @@ module.exports = {
       path: __dirname,
       filename: 'webpack-stats.json' //armazena o status final do processo, a mesma mensagem que aparece no terminal quando rodamos o Webpack.
     }),
+    new ExtractText({
+        filename: '[name]-[hash].css'
+      }),
   ],
-  module.exports = {
-    module: {
-      rules: [
-        {
-          test: /\.jsx?$/,
-          loader: 'babel-loader',
-          exclude: /node_modules/,
-        },
-      ],
-    },}
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/,
+        loader: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.scss$/,
+        use: ExtractText.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader']
+        })
+      },
+    ],
+  },
 }

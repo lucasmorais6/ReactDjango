@@ -1,0 +1,19 @@
+{
+  "name": "reactdjango",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasmorais6/reactDjango.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucasmorais6/reactDjango/issues"
+  },
+  "homepage": "https://github.com/lucasmorais6/reactDjango#readme",
+  "description": ""
+}
